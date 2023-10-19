@@ -3,9 +3,9 @@
 
 #define NUMBER 10
 
-int main()
+int	main()
 {
-	Zombie *horde = zombieHorde(NUMBER, "test");
+	Zombie	*horde = zombieHorde(NUMBER, "test");
 	for (int i = 0; i < NUMBER; i++)
 		horde[i].announce();
 

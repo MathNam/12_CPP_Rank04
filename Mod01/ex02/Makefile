@@ -4,7 +4,7 @@
 
 # Name
 
-PROJECT_NAME = brain
+PROJECT_NAME = ref
 NAME	= ./$(PROJECT_NAME)
 
 #______________________________________________________________________________#

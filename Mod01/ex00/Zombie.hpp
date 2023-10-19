@@ -4,18 +4,13 @@
 # include <string>
 # include <iostream>
 
-class Zombie
-{
+class	Zombie {
 public:
-
 	Zombie(std::string name);
 	~Zombie();
-
-	void announce( void );
-
+	void	announce(void);
 private:
-
-	std::string _name;
+	std::string	_name;
 };
 
 #endif

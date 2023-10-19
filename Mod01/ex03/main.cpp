@@ -2,7 +2,7 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-int main()
+int	main()
 {
 	std::cout << "===== subject main =====" << std::endl;
 	std::cout << std::endl;

@@ -1,19 +1,19 @@
 #include <iostream>
 #include "Zombie.h"
 
-int main()
+int	main()
 {
-	Zombie zombie("test1");
-	Zombie zombie1("test2");
-	Zombie zombie2("test3");
-	zombie.announce();
-	zombie2.announce();
+	Zombie	zombie0("Z0");
+	Zombie	zombie1("Z1");
+	Zombie	zombie2("Z2");
+	zombie0.announce();
 	zombie1.announce();
+	zombie2.announce();
 
-	Zombie *zombie3 = newZombie("newTest");
+	Zombie	*zombie3 = newZombie("Znew");
 	zombie3->announce();
 
-	randomChump("randomChump");
+	randomChump("Zrandom");
 
 	delete zombie3;
 	return (0);
