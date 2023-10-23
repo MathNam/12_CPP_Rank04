@@ -36,9 +36,8 @@ void	Harl::complain(std::string level)
 {
 	std::string	level_tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void 		(Harl::*function_tab[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		if (level == level_tab[i])
-			(this->*function_tab[i])();
+			(*this.*function_tab[i])();
 	}
 }

@@ -38,15 +38,14 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	int i = -1;
+	int			i = 0;
 	std::string	level_tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	while (++i < 4)
-	{
+	while (i < 4) {
 		if (level == level_tab[i])
 			break;
+		i++;
 	}
-	switch (i)
-	{
+	switch (i) {
 		case 0:
 			this->debug();
 			std::cout << std::endl;
@@ -58,11 +57,9 @@ void	Harl::complain(std::string level)
 			std::cout << std::endl;
 		case 3:
 			this->error();
-			break;
-		default:
-		{
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			std::cout << std::endl;
-		}
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

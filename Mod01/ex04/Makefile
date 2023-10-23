@@ -4,7 +4,7 @@
 
 # Name
 
-PROJECT_NAME = replace
+PROJECT_NAME = ft_sed
 NAME	= ./$(PROJECT_NAME)
 
 #______________________________________________________________________________#
