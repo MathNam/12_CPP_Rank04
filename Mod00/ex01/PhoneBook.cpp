@@ -6,7 +6,7 @@
 /*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:58:17 by maaliber          #+#    #+#             */
-/*   Updated: 2023/10/19 14:06:24 by maaliber         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:12:58 by maaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,24 @@ void PhoneBook::addContact()
 	this->_contacts[index].copyContact(tmp);
 }
 
+bool isParam(std::string line)
+{
+	char* p;
+
+	strtol(line.c_str(), &p, 10);
+	return *p == 0;
+}
+
 void PhoneBook::searchContact(std::string index)
 {
 	if (index.empty())
 	{
 		std::cout << std::endl << "No index provided" << std::endl << std::endl;
+		return;
+	}
+	if (index != "ALL" and !isParam(index))
+	{
+		std::cout << std::endl << "Index must be a number" << std::endl << std::endl;
 		return;
 	}
 	if (index != "ALL" and std::atoi(index.c_str()) >= this->_nbContacts)
