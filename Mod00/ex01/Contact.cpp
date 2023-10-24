@@ -6,7 +6,7 @@
 /*   By: maaliber <maaliber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:02:58 by maaliber          #+#    #+#             */
-/*   Updated: 2023/10/19 12:07:57 by maaliber         ###   ########.fr       */
+/*   Updated: 2023/10/24 15:06:09 by maaliber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int Contact::getDarkestSecret()
 
 int	Contact::checkContact() const
 {
-	if (this->_firstName.empty() || this->_lastName.empty() || this->_nickname.empty() || this->_number.empty())
+	if (this->_firstName.empty() || this->_lastName.empty() || this->_nickname.empty() || this->_number.empty() || this->_darkestSecret.empty())
 	{
 		std::cout << std::endl << std::endl << "One of the fields is empty" << std::endl;
 		return false;

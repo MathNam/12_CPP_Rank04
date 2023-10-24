@@ -38,10 +38,10 @@ Fixed &Fixed::operator = (const Fixed &toAssign)
 	return *this;
 }
 
-std::ostream &operator << (std::ostream &flux, const Fixed &fixed)
+std::ostream &operator << (std::ostream &out, const Fixed &fixed)
 {
-	flux << fixed.toFloat();
-	return flux;
+	out << fixed.toFloat();
+	return out;
 }
 
 int	Fixed::getRawBits(void) const

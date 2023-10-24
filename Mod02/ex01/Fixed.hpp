@@ -4,17 +4,15 @@
 # include <iostream>
 # include <cmath>
 
-class Fixed
-{
+class Fixed {
 public:
-
 	Fixed();
 	Fixed(const Fixed &toCopy);
 	Fixed(const int number);
 	Fixed(const float number);
 	~Fixed();
 
-	Fixed &operator = (const Fixed &toAssign);
+	Fixed	&operator = (const Fixed &toAssign);
 
 	int		getRawBits(void) const;
 	void	setRawBits(const int &raw);
@@ -22,7 +20,6 @@ public:
 	float	toFloat() const;
 
 private:
-
 	int					_fixedPointValue;
 	static const int	_fractionalBits = 8;
 };
