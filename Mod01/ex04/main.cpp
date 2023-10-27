@@ -1,29 +1,23 @@
+#include <errno.h>
+#include <string.h>
 #include <iostream>
 #include <fstream>
-#include <ostream>
 
-void	ft_sed(std::string& to_repl, std::string sub, std::ifstream& infile, std::ofstream& outfile)
+void	replace(std::string& target, std::string sub, std::ifstream& ifs, std::ofstream& ofs)
 {
 	std::string	buffer;
-	char		ch;
-	int			i = 0;
+	size_t		i = 0;
 
-	while (infile.get(ch))
-	{
-		buffer.push_back(ch);
-		if (buffer[i] == to_repl[i]) {
-			i++;
-			if (to_repl[i] == '\0') {
-				outfile << sub;
-				buffer.clear();
-				i = 0;
-			}
+	while (std::getline(ifs, buffer)) {
+		i = buffer.find(target);
+		if (i != std::string::npos && !target.empty()) {
+			buffer.erase(i, target.length());
+			buffer.insert(i, sub);
 		}
-		else {
-			outfile << buffer;
-			buffer.clear();
-			i = 0;
-		}
+		ofs << buffer;
+		if (!ifs.eof())
+			ofs << std::endl;
+		buffer.clear();
 	}
 }
 
@@ -34,18 +28,23 @@ int	main(int argc, char *argv[])
 		return 1;
 	}
 
-	std::ifstream	infile(argv[1]);
-	if (!infile) {
+	std::ifstream	ifs(argv[1]);
+	if (!ifs) {
 		std::cout << "Error while trying to open " << argv[1] << std::endl;
 		return 1;
 	}
 
 	std::string		newName = argv[1];
 	newName += ".replace";
+	std::ofstream	ofs(newName.c_str());
+	if (!ofs) {
+		std::cout << "Error while trying to create " << newName << std::endl;
+		return 1;
+	}
 
-	std::ofstream	outfile(newName.c_str());
-	std::string		to_repl = argv[2];
+	std::string		target = argv[2];
 	std::string		sub = argv[3];
-	ft_sed(to_repl, sub, infile, outfile);
+	replace(target, sub, ifs, ofs);
+
 	return 0;
 }
