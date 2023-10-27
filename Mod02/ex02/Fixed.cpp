@@ -62,7 +62,7 @@ bool	Fixed::operator!=(const Fixed &rhs) const
 
 Fixed	Fixed::operator+(const Fixed &rhs)
 {
-	Fixed result;
+	Fixed	result;
 
 	result.setRawBits(this->toFloat() + rhs.toFloat());
 	return result;
@@ -70,7 +70,7 @@ Fixed	Fixed::operator+(const Fixed &rhs)
 
 Fixed	Fixed::operator-(const Fixed &rhs)
 {
-	Fixed result;
+	Fixed	result;
 
 	result.setRawBits(this->toFloat() - rhs.toFloat());
 	return result;
@@ -78,13 +78,13 @@ Fixed	Fixed::operator-(const Fixed &rhs)
 
 Fixed	Fixed::operator*(const Fixed &rhs)
 {
-	Fixed result(this->toFloat() * rhs.toFloat());
+	Fixed	result(this->toFloat() * rhs.toFloat());
 	return result;
 }
 
 Fixed	Fixed::operator/(const Fixed &rhs)
 {
-	Fixed result(this->toFloat() / rhs.toFloat());
+	Fixed	result(this->toFloat() / rhs.toFloat());
 	return result;
 }
 
@@ -106,16 +106,16 @@ Fixed	&Fixed::operator--()
 //post-increment
 Fixed	Fixed::operator++(int)
 {
-	Fixed old = *this;
+	Fixed	tmp(*this);
 	++(*this);
-	return old;
+	return tmp;
 }
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed old = *this;
-	++(*this);
-	return old;
+	Fixed	tmp(*this);
+	--(*this);
+	return tmp;
 }
 
 std::ostream &operator << (std::ostream &flux, const Fixed &fixed)
