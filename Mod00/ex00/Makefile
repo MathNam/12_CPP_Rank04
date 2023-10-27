@@ -11,10 +11,10 @@ PROJECT_NAME = megaphone
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
 
 # Compiler
-CC = c++
+CXX = c++
 
 # Compiler Flags
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #______________________________________________________________________________#
 ############################### Print Variables ################################
@@ -130,12 +130,12 @@ all:	$(NAME)
 		@echo "--------------------------------------------------"
 
 $(NAME):	$(OBJS)
-		@$(CC) $(CFLAGS) $^ $(LDFLAGS) $(DEPS) -o $@
+		@$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) $(DEPS) -o $@
     	#-----Output-----#
 		@echo "$(WHITE)\n▶$(BGREEN)$(NAME)\t$(GREEN)Executable created$(NC)"
 
 $(OBJS): 	$(OBJS_DIR)/%.o: %.cpp | dir where
-		@$(CC) $(CFLAGS) -MMD $(DEPS) -c $< -o $@
+		@$(CXX) $(CXXFLAGS) -MMD $(DEPS) -c $< -o $@
 		@mv $(basename $@).d $(BUILD_DIR)/$(notdir $(basename $@)).d
     	#-----Output-----#
 		@$(call PROGRESS_BAR, $(basename $(notdir $<)))
