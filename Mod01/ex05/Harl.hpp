@@ -4,11 +4,11 @@
 # include <iostream>
 # include <string>
 
-class Harl
-{
+class Harl {
 public:
 	Harl();
 	~Harl();
+
 	void	complain(std::string level);
 
 private:

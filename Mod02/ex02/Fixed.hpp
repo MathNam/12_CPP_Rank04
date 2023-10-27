@@ -4,8 +4,7 @@
 # include <iostream>
 # include <cmath>
 
-class Fixed
-{
+class Fixed {
 public:
 	Fixed();
 	Fixed(const Fixed &toCopy);

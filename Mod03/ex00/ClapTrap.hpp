@@ -4,10 +4,8 @@
 #include <string>
 #include <iostream>
 
-class ClapTrap
-{
+class ClapTrap {
 public:
-
 	ClapTrap(const std::string &name);
 	ClapTrap(const ClapTrap &toCopy);
 	~ClapTrap();
