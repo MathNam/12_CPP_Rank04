@@ -3,12 +3,12 @@
 
 int main( void )
 {
-	const Point a(0.0, 0.0);
-	const Point b(1.0, 5.0);
-	const Point c(3.0, 3.0);
-	const Point point(3, 3);
+	const Point a(-1.0, -1.0);
+	const Point b(5.0, 5.0);
+	const Point c(5.0, -5.0);
+	const Point p(-1.1, 1.1);
 
-	std::cout << bsp(a, b, c,point) << std::endl;
+	std::cout << bsp(a, b, c, p) << std::endl;
 
-	return(0);
+	return 0;
 }

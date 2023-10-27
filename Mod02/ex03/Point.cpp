@@ -14,10 +14,9 @@ Point::Point(const Point &toCopy)
 Point::~Point()
 {}
 
-Point	&Point::operator=(const Point &rhs)
+Point	&Point::operator = (const Point &rhs)
 {
-	if (this != &rhs)
-	{
+	if (this != &rhs) {
 		this->_x = rhs._x;
 		this->_y = rhs._y;
 	}
