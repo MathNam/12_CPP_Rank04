@@ -19,9 +19,7 @@ ClapTrap::~ClapTrap()
 ClapTrap	&ClapTrap::operator=(const ClapTrap &rhs)
 {
 	if (this != &rhs)
-	{
 		*this = rhs;
-	}
 	return *this;
 }
 

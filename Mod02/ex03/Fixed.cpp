@@ -60,32 +60,24 @@ bool	Fixed::operator!=(const Fixed &rhs) const
 
 // arithmetic operators
 
-Fixed	Fixed::operator+(const Fixed &rhs)
+Fixed	Fixed::operator+(const Fixed &rhs) const
 {
-	Fixed	result;
-
-	result.setRawBits(this->toFloat() + rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
-Fixed	Fixed::operator-(const Fixed &rhs)
+Fixed	Fixed::operator-(const Fixed &rhs) const
 {
-	Fixed	result;
-
-	result.setRawBits(this->toFloat() - rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
-Fixed	Fixed::operator*(const Fixed &rhs)
+Fixed	Fixed::operator*(const Fixed &rhs) const
 {
-	Fixed	result(this->toFloat() * rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
-Fixed	Fixed::operator/(const Fixed &rhs)
+Fixed	Fixed::operator/(const Fixed &rhs) const
 {
-	Fixed	result(this->toFloat() / rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 // increment operators
@@ -106,16 +98,16 @@ Fixed	&Fixed::operator--()
 //post-increment
 Fixed	Fixed::operator++(int)
 {
-	Fixed	old = *this;
-	++(*this);
-	return old;
+	Fixed	tmp = *this;
+	operator++();
+	return tmp;
 }
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed	old = *this;
-	++(*this);
-	return old;
+	Fixed	tmp = *this;
+	operator--();
+	return tmp;
 }
 
 std::ostream &operator << (std::ostream &flux, const Fixed &fixed)

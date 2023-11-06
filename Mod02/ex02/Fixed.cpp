@@ -19,7 +19,7 @@ Fixed::Fixed(const float number) : _fixedPointValue(roundf(number * pow(2, this-
 Fixed::~Fixed()
 {}
 
-Fixed &Fixed::operator = (const Fixed &rhs)
+Fixed &Fixed::operator=(const Fixed &rhs)
 {
 	if (this != &rhs)
 		this->_fixedPointValue = rhs._fixedPointValue;
@@ -28,93 +28,85 @@ Fixed &Fixed::operator = (const Fixed &rhs)
 
 // comparison operators
 
-bool	Fixed::operator > (const Fixed &rhs) const
+bool	Fixed::operator>(const Fixed &rhs) const
 {
 	return this->getRawBits() > rhs.getRawBits();
 }
 
-bool	Fixed::operator < (const Fixed &rhs) const
+bool	Fixed::operator<(const Fixed &rhs) const
 {
 	return this->getRawBits() < rhs.getRawBits();
 }
 
-bool	Fixed::operator >= (const Fixed &rhs) const
+bool	Fixed::operator>=(const Fixed &rhs) const
 {
 	return this->getRawBits() >= rhs.getRawBits();
 }
 
-bool	Fixed::operator <= (const Fixed &rhs) const
+bool	Fixed::operator<=(const Fixed &rhs) const
 {
 	return this->getRawBits() <= rhs.getRawBits();
 }
 
-bool	Fixed::operator == (const Fixed &rhs) const
+bool	Fixed::operator==(const Fixed &rhs) const
 {
 	return this->getRawBits() == rhs.getRawBits();
 }
 
-bool	Fixed::operator != (const Fixed &rhs) const
+bool	Fixed::operator!=(const Fixed &rhs) const
 {
 	return this->getRawBits() != rhs.getRawBits();
 }
 
 // arithmetic operators
 
-Fixed	Fixed::operator + (const Fixed &rhs) const
+Fixed	Fixed::operator+(const Fixed &rhs) const
 {
-	Fixed	result;
-
-	result.setRawBits(this->toFloat() + rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
-Fixed	Fixed::operator - (const Fixed &rhs) const
+Fixed	Fixed::operator-(const Fixed &rhs) const
 {
-	Fixed	result;
-
-	result.setRawBits(this->toFloat() - rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
-Fixed	Fixed::operator * (const Fixed &rhs) const
+Fixed	Fixed::operator*(const Fixed &rhs) const
 {
-	Fixed	result(this->toFloat() * rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
-Fixed	Fixed::operator / (const Fixed &rhs) const
+Fixed	Fixed::operator/(const Fixed &rhs) const
 {
-	Fixed	result(this->toFloat() / rhs.toFloat());
-	return result;
+	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 // increment operators
 
 //pre-increment
-Fixed	&Fixed::operator ++()
+Fixed	&Fixed::operator++()
 {
 	++this->_fixedPointValue;
 	return *this;
 }
 
-Fixed	&Fixed::operator --()
+Fixed	&Fixed::operator--()
 {
 	--this->_fixedPointValue;
 	return *this;
 }
 
 //post-increment
-Fixed	Fixed::operator ++(int)
+Fixed	Fixed::operator++(int)
 {
-	Fixed	tmp(*this);
-	++(*this);
+	Fixed	tmp = *this;
+	operator++();
 	return tmp;
 }
 
-Fixed	Fixed::operator --(int)
+Fixed	Fixed::operator--(int)
 {
-	Fixed	tmp(*this);
-	--(*this);
+	Fixed	tmp = *this;
+	operator--();
 	return tmp;
 }
 
