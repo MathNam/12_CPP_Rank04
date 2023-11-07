@@ -25,9 +25,13 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &rhs)
 {
-	if (this != &rhs)
-		*this = rhs;
-	return *this;
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_health = rhs._health;
+		this->_energy = rhs._energy;
+		this->_attack = rhs._attack;
+	}
+	return (*this);
 }
 
 void	DiamondTrap::whoAmI()
