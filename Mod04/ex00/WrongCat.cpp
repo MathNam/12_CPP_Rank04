@@ -6,7 +6,7 @@ WrongCat::WrongCat(): WrongAnimal()
 	this->_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat &toCopy): WrongAnimal()
+WrongCat::WrongCat(const WrongCat& toCopy): WrongAnimal()
 {
 	*this = toCopy;
 }
@@ -16,12 +16,10 @@ WrongCat::~WrongCat()
 	std::cout << "WrongCat destructor called" << std::endl;
 }
 
-WrongCat	&WrongCat::operator=(const WrongCat &rhs)
+WrongCat&	WrongCat::operator=(const WrongCat& rhs)
 {
 	if (this != &rhs)
-	{
-		*this = rhs;
-	}
+		this->_type = rhs._type;
 	return *this;
 }
 
@@ -30,7 +28,7 @@ void	WrongCat::makeSound() const
 	std::cout << "wrongMiaou" << std::endl;
 }
 
-const std::string	&WrongCat::getType() const
+const std::string&	WrongCat::getType() const
 {
 	return this->_type;
 }

@@ -3,17 +3,15 @@
 
 #include "Animal.hpp"
 
-class Dog : public Animal
-{
+class Dog : public Animal {
 public:
-
 	Dog();
-	Dog(const Dog &toCopy);
+	Dog(const Dog& toCopy);
 	virtual ~Dog();
 
-	Dog	&operator=(const Dog &rhs);
+	Dog&	operator=(const Dog& rhs);
 
 	void	makeSound() const;
-
 };
+
 #endif
