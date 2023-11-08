@@ -3,10 +3,8 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
-{
+class ScavTrap : public ClapTrap {
 public:
-
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &toCopy);
 	~ScavTrap();
@@ -16,4 +14,5 @@ public:
 	void	guardGate();
 	void	attack(const std::string &target);
 };
+
 #endif

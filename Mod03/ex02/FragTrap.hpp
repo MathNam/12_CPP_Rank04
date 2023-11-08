@@ -3,10 +3,8 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
-{
+class FragTrap : public ClapTrap {
 public:
-
 	FragTrap(std::string name);
 	FragTrap(const FragTrap &toCopy);
 	~FragTrap();
@@ -14,6 +12,5 @@ public:
 	FragTrap	&operator=(const FragTrap &rhs);
 
 	void	highFivesGuys(void);
-
 };
 #endif
