@@ -6,13 +6,19 @@
 void	replace(std::string& target, std::string sub, std::ifstream& ifs, std::ofstream& ofs)
 {
 	std::string	buffer;
-	size_t		i = 0;
+	std::string	sub_string;
+	size_t		pos;
+	size_t		i;
 
 	while (std::getline(ifs, buffer)) {
-		i = buffer.find(target);
-		if (i != std::string::npos && !target.empty()) {
-			buffer.erase(i, target.length());
-			buffer.insert(i, sub);
+		pos = 0;
+		i = 0;
+		sub_string = buffer.substr(pos, buffer.length());
+		while ((i = sub_string.find(target)) != std::string::npos && !target.empty()) {
+			buffer.erase(pos + i, target.length());
+			buffer.insert(pos + i, sub);
+			pos += i + sub.length();
+			sub_string = buffer.substr(pos, buffer.length());
 		}
 		ofs << buffer;
 		if (!ifs.eof())
@@ -24,7 +30,7 @@ void	replace(std::string& target, std::string sub, std::ifstream& ifs, std::ofst
 int	main(int argc, char *argv[])
 {
 	if (argc != 4 || argv[2] == 0) {
-		std::cout << "Invalid number of arguments" << std::endl;
+		std::cout << "Invalid number of arguments\nUsage: ./replace [filename] [target] [subsutition]" << std::endl;
 		return 1;
 	}
 
