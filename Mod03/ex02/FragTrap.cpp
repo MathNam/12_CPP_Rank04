@@ -7,6 +7,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	this->_health = 100;
 	this->_energy = 100;
 	this->_attack = 30;
+	this->_max_health = 100;
 }
 
 FragTrap::FragTrap(const FragTrap &toCopy): ClapTrap(toCopy._name)
@@ -26,6 +27,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &rhs)
 		this->_health = rhs._health;
 		this->_energy = rhs._energy;
 		this->_attack = rhs._attack;
+		this->_max_health = rhs._max_health;
 	}
 	return (*this);
 }

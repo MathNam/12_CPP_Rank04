@@ -22,6 +22,7 @@ protected:
 	unsigned int	_health;
 	unsigned int	_energy;
 	int				_attack;
+	unsigned int	_max_health;
 };
 
 #endif

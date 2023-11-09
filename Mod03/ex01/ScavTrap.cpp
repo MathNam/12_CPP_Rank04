@@ -6,6 +6,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_health = 100;
 	this->_energy = 50;
 	this->_attack = 20;
+	this->_max_health = 100;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &toCopy) : ClapTrap(toCopy._name)
@@ -25,6 +26,7 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &rhs)
 		this->_health = rhs._health;
 		this->_energy = rhs._energy;
 		this->_attack = rhs._attack;
+		this->_max_health = rhs._max_health;
 	}
 	return (*this);
 }

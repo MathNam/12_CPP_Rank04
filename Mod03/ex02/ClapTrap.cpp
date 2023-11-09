@@ -1,7 +1,8 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(const std::string& name) : _name(name), _health(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap(const std::string& name) :
+	_name(name), _health(10), _energy(10), _attack(0), _max_health(10)
 {
 	std::cout << "ClapTrap " << name << " created" << std::endl;
 }
@@ -22,6 +23,7 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
 		this->_health = rhs._health;
 		this->_energy = rhs._energy;
 		this->_attack = rhs._attack;
+		this->_max_health = rhs._max_health;
 	}
 	return (*this);
 }
@@ -57,8 +59,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << amount << " points of health" << std::endl;
 	this->_energy--;
 	this->_health += amount;
-	if (this->_health > 10)
-		this->_health = 10;
+	if (this->_health > this->_max_health)
+		this->_health = this->_max_health;
 }
 
 void	ClapTrap::errorStatus()
