@@ -6,7 +6,7 @@ WrongAnimal::WrongAnimal()
 	this->_type = "";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &toCopy)
+WrongAnimal::WrongAnimal(const WrongAnimal& toCopy)
 {
 	*this = toCopy;
 }
@@ -16,19 +16,17 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
-WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &rhs)
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& rhs)
 {
 	if (this != &rhs)
-	{
-		*this = rhs;
-	}
+		this->_type = rhs._type;
 	return *this;
 }
 
 void	WrongAnimal::makeSound(void) const
 {}
 
-const std::string 	&WrongAnimal::getType() const
+const std::string&	WrongAnimal::getType() const
 {
 	return this->_type;
 }

@@ -17,18 +17,20 @@ FragTrap::FragTrap(const FragTrap &toCopy): ClapTrap(toCopy._name)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << this->_name << " destroyed" << std::endl;
-
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &rhs)
 {
-	if (this != &rhs)
-		*this = rhs;
-	return *this;
+	if (this != &rhs) {
+		this->_name = rhs._name;
+		this->_health = rhs._health;
+		this->_energy = rhs._energy;
+		this->_attack = rhs._attack;
+	}
+	return (*this);
 }
 
 void	FragTrap::highFivesGuys()
 {
 	std::cout << "Positive high five request" << std::endl;
 }
-

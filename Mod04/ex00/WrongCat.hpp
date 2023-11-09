@@ -3,18 +3,17 @@
 
 #include "WrongAnimal.hpp"
 
-class WrongCat : public WrongAnimal
-{
+class WrongCat : public WrongAnimal {
 public:
-
 	WrongCat();
-	WrongCat(const WrongCat &toCopy);
+	WrongCat(const WrongCat& toCopy);
 	~WrongCat();
 
-	WrongCat	&operator=(const WrongCat &rhs);
+	WrongCat&	operator=(const WrongCat& rhs);
 
 	void	makeSound() const;
-	const std::string	&getType() const;
+	const std::string&	getType() const;
 
 };
+
 #endif
