@@ -146,7 +146,7 @@ Fixed	&Fixed::min(Fixed &lhs, Fixed &rhs)
 Fixed	const &Fixed::min(const Fixed &lhs, const Fixed &rhs)
 {
 	if (lhs < rhs)
-		return rhs;
+		return lhs;
 	return rhs;
 }
 
@@ -163,3 +163,4 @@ Fixed	const &Fixed::max(const Fixed &lhs, const Fixed &rhs)
 		return lhs;
 	return rhs;
 }
+
