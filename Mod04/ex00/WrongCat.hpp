@@ -13,7 +13,6 @@ public:
 
 	void	makeSound() const;
 	const std::string&	getType() const;
-
 };
 
 #endif

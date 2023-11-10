@@ -4,8 +4,7 @@
 # include <string>
 # include <iostream>
 
-class Brain
-{
+class Brain {
 public:
 
 	Brain();
@@ -19,8 +18,6 @@ public:
 	void				setIdea(int index, std::string idea);
 
 protected:
-
 	std::string	_ideas[100];
-
 };
 #endif

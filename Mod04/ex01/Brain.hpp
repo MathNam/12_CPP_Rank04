@@ -6,7 +6,6 @@
 
 class Brain {
 public:
-
 	Brain();
 	Brain(const Brain& toCopy);
 	virtual ~Brain();

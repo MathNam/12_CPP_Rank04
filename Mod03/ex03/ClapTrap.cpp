@@ -57,8 +57,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << amount << " points of health" << std::endl;
 	this->_energyPoints--;
 	this->_hitPoints += amount;
-	if (this->_hitPoints > 10)
-		this->_hitPoints = 10;
+	if (this->_hitPoints > this->_max_hitPoints)
+		this->_hitPoints = this->_max_hitPoints;
 }
 
 void	ClapTrap::errorStatus()

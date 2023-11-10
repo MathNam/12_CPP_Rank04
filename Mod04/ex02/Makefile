@@ -59,7 +59,7 @@ DEPS += -I $(DEPS_DIR)
 ############################### Headers ########################################
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
 
-HEADER +=	Animal.hpp\
+HEADER +=	AAnimal.hpp\
 			Dog.hpp\
 			Cat.hpp\
 			Brain.hpp
@@ -79,7 +79,7 @@ PATH_SRCS = $(SRCS_DIR)
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
 
 SRCS +=	main.cpp\
-		Animal.cpp\
+		AAnimal.cpp\
 		Dog.cpp\
 		Cat.cpp\
 		Brain.cpp

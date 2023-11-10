@@ -1,13 +1,11 @@
 #ifndef CAT_H
 # define CAT_H
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public A_Animal
-{
+class Cat : public AAnimal	{
 public:
-
 	Cat();
 	Cat(const Cat &toCopy);
 	virtual ~Cat();
@@ -18,9 +16,7 @@ public:
 	void	getIdeas() const;
 	void	setIdea(int index, std::string idea);
 
-	protected:
-
+protected:
 	Brain	*_brain;
-
 };
 #endif

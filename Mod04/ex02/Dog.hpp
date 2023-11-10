@@ -1,13 +1,11 @@
 #ifndef DOG_H
 # define DOG_H
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public A_Animal
-{
+class Dog : public AAnimal {
 public:
-
 	Dog();
 	Dog(const Dog &toCopy);
 	virtual ~Dog();
@@ -19,8 +17,6 @@ public:
 	void	setIdea(int index, std::string idea);
 
 protected:
-
 	Brain*	_brain;
-
 };
 #endif

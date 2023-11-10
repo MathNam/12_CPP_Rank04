@@ -38,5 +38,5 @@ void	FragTrap::highFivesGuys()
 		std::cout << "Fragtrap " << this->_name
 			<< " remembers it doesn't have any arms left" << std::endl;
 	else
-		std::cout << "Fragtrap " << this->_name << "request a high five." << std::endl;
+		std::cout << "Fragtrap " << this->_name << " request a high five." << std::endl;
 }

@@ -22,7 +22,7 @@ protected:
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;
 	int				_attackDmg;
-	int				_max_hitPoints;
+	unsigned int	_max_hitPoints;
 };
 
 #endif

@@ -29,6 +29,11 @@ Animal&	Animal::operator=(const Animal &rhs)
 void	Animal::makeSound(void) const
 {}
 
+std::string&	Animal::getType()
+{
+	return this->_type;
+}
+
 const std::string&	Animal::getType() const
 {
 	return this->_type;

@@ -4,10 +4,8 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
-{
+class Cat : public Animal {
 public:
-
 	Cat();
 	Cat(const Cat &toCopy);
 	virtual ~Cat();
@@ -18,9 +16,7 @@ public:
 	void	getIdeas() const;
 	void	setIdea(int index, std::string idea);
 
-	protected:
-
+private:
 	Brain	*_brain;
-
 };
 #endif

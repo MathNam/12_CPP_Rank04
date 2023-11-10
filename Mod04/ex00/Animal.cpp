@@ -31,3 +31,8 @@ const std::string&	Animal::getType() const
 {
 	return this->_type;
 }
+
+std::string&	Animal::getType()
+{
+	return this->_type;
+}
