@@ -8,9 +8,10 @@ DiamondTrap::DiamondTrap(const std::string &name): ClapTrap(name), FragTrap(name
 	std::cout << "DiamondTrap " << name << " created" << std::endl;
 	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
-	this->_health = FragTrap::_health;
-	this->_energy = ScavTrap::_energy;
-	this->_attack = FragTrap::_attack;
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDmg = FragTrap::_attackDmg;
+	this->_max_hitPoints = FragTrap::_max_hitPoints;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &toCopy): ClapTrap(toCopy._name), FragTrap(toCopy._name), ScavTrap(toCopy._name)
@@ -26,10 +27,12 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &rhs)
 {
 	if (this != &rhs) {
+		ClapTrap::_name = rhs.ClapTrap::_name;
 		this->_name = rhs._name;
-		this->_health = rhs._health;
-		this->_energy = rhs._energy;
-		this->_attack = rhs._attack;
+		this->_hitPoints = rhs._hitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_attackDmg = rhs._attackDmg;
+		this->_max_hitPoints = rhs._max_hitPoints;
 	}
 	return (*this);
 }

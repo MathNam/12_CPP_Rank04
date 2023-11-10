@@ -16,6 +16,6 @@ int main()
 
 	b.takeDamage(9);
 	for (int i = 0; i < 13; i++)
-		b.beRepaired(1);
+		b.beRepaired(4);
 	return (0);
 }

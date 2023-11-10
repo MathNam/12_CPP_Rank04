@@ -19,10 +19,10 @@ public:
 
 protected:
 	std::string		_name;
-	unsigned int	_health;
-	unsigned int	_energy;
-	int				_attack;
-	unsigned int	_max_health;
+	unsigned int	_hitPoints;
+	unsigned int	_energyPoints;
+	int				_attackDmg;
+	unsigned int	_max_hitPoints;
 };
 
 #endif

@@ -19,9 +19,9 @@ public:
 
 private:
 	std::string		_name;
-	unsigned int	_health;
-	unsigned int	_energy;
-	int				_attack;
+	unsigned int	_hitPoints;
+	unsigned int	_energyPoints;
+	int				_attackDmg;
 };
 
 #endif

@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(const std::string& name) : _name(name), _health(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDmg(0)
 {
 	std::cout << "ClapTrap " << name << " created" << std::endl;
 }
@@ -19,53 +19,53 @@ ClapTrap::~ClapTrap()
 ClapTrap&	ClapTrap::operator=(ClapTrap const & src) {
 	if (this != &src) {
 		this->_name = src._name;
-		this->_health = src._health;
-		this->_energy = src._energy;
-		this->_attack = src._attack;
+		this->_hitPoints = src._hitPoints;
+		this->_energyPoints = src._energyPoints;
+		this->_attackDmg = src._attackDmg;
 	}
 	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (!this->_energy || !this->_health) {
+	if (!this->_energyPoints || !this->_hitPoints) {
 		std::cout << "ClapTrap " << this->_name << " can't attack: ";
 		return this->errorStatus();
 	}
 	std::cout << "ClapTrap " << this->_name << " attacks " << target;
-	std::cout << ", causing " << this->_attack << " points of damage!" << std::endl;
-	this->_energy--;
+	std::cout << ", causing " << this->_attackDmg << " points of damage!" << std::endl;
+	this->_energyPoints--;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap " << this->_name << " received ";
 	std::cout << amount << " points of damage!" << std::endl;
-	if (amount < this->_health)
-		this->_health -= amount;
+	if (amount < this->_hitPoints)
+		this->_hitPoints -= amount;
 	else
-		this->_health = 0;
+		this->_hitPoints = 0;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (!this->_energy || !this->_health) {
+	if (!this->_energyPoints || !this->_hitPoints) {
 		std::cout << "ClapTrap " << this->_name << " can't repair: ";
 		this->errorStatus();
 		return;
 	}
 	std::cout << "ClapTrap " << this->_name << " is repairing ";
 	std::cout << amount << " points of health" << std::endl;
-	this->_energy--;
-	this->_health += amount;
-	if (this->_health > 10)
-		this->_health = 10;
+	this->_energyPoints--;
+	this->_hitPoints += amount;
+	if (this->_hitPoints > 10)
+		this->_hitPoints = 10;
 }
 
 void	ClapTrap::errorStatus()
 {
-	if (!this->_health)
+	if (!this->_hitPoints)
 		std::cout << "too severely damaged." << std::endl;
-	if (!this->_energy)
+	if (!this->_energyPoints)
 		std::cout << "out of energy." << std::endl;
 }

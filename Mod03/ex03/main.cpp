@@ -19,6 +19,8 @@ int main()
 	{
 		a.attack("test");
 	}
+	a.takeDamage(15);
+	a.guardGate();
 	a.highFivesGuys();
 	std::cout << std::endl;
 	b.takeDamage(9);
