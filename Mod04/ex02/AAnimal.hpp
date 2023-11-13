@@ -7,13 +7,13 @@
 class AAnimal {
 public:
 	AAnimal();
-	AAnimal(const AAnimal &toCopy);
+	AAnimal(const AAnimal& toCopy);
 	virtual ~AAnimal();
 
-	AAnimal	&operator=(const AAnimal &rhs);
+	AAnimal&	operator=(const AAnimal& rhs);
 
 	virtual void		makeSound() const = 0;
-	const std::string	&getType() const;
+	const std::string&	getType() const;
 
 protected:
 	std::string	_type;

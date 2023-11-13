@@ -4,7 +4,7 @@
 
 int main()
 {
-	// const AAnimal* meta = new AAnimal();
+	//const AAnimal* meta = new AAnimal();
 	const AAnimal*	j = new Dog();
 	const AAnimal*	i = new Cat();
 	std::cout << std::endl;

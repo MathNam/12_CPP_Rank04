@@ -58,7 +58,7 @@ int main()
 		std::cout << std::endl;
 
 		std::cout << "Destructing b" << std::endl;
-		delete(b);
+		delete b;
 	}
 	return 0;
 }

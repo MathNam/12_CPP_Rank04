@@ -12,7 +12,7 @@ NAME	= ./$(PROJECT_NAME)
 #‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾#
 
 # Compiler
-CXX = /usr/bin/c++
+CXX = c++
 
 # Compiler Flags
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
