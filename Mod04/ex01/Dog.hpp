@@ -8,11 +8,11 @@ class Dog : public Animal {
 public:
 	Dog();
 	Dog(const Dog &toCopy);
-	virtual ~Dog();
+	~Dog();
 
 	Dog	&operator=(const Dog &rhs);
 
-	virtual void	makeSound() const;
+	void	makeSound() const;
 	void	getIdeas() const;
 	void	setIdea(int index, std::string idea);
 

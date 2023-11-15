@@ -7,7 +7,7 @@ class Dog : public Animal {
 public:
 	Dog();
 	Dog(const Dog& toCopy);
-	virtual ~Dog();
+	~Dog();
 
 	Dog&	operator=(const Dog& rhs);
 

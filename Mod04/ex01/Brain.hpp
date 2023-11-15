@@ -8,7 +8,7 @@ class Brain {
 public:
 	Brain();
 	Brain(const Brain& toCopy);
-	virtual ~Brain();
+	~Brain();
 
 	Brain&	operator=(const Brain& rhs);
 

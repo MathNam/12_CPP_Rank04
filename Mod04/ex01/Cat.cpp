@@ -21,7 +21,7 @@ Cat::~Cat()
 	delete this->_brain;
 }
 
-Cat	&Cat::operator=(const Cat &rhs)
+Cat&	Cat::operator=(const Cat& rhs)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this == &rhs)

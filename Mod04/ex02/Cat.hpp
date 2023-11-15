@@ -8,15 +8,15 @@ class Cat : public AAnimal	{
 public:
 	Cat();
 	Cat(const Cat &toCopy);
-	virtual ~Cat();
+	~Cat();
 
 	Cat	&operator=(const Cat &rhs);
 
-	virtual void	makeSound() const;
+	void	makeSound() const;
 	void	getIdeas() const;
 	void	setIdea(int index, std::string idea);
 
-protected:
+private:
 	Brain	*_brain;
 };
 #endif

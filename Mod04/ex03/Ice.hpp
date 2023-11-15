@@ -3,20 +3,16 @@
 
 #include "AMateria.hpp"
 
-class Ice: public AMateria
-{
+class Ice: public AMateria {
 public:
-
 	Ice();
-	Ice(const Ice &toCopy);
-	virtual ~Ice();
+	Ice(const Ice& toCopy);
+	~Ice();
 
-	Ice	&operator=(const Ice &rhs);
+	Ice&	operator=(const Ice& rhs);
 
-	virtual AMateria*	clone() const;
-	virtual void		use(ICharacter &target);
-
-protected:
-
+	AMateria*	clone() const;
+	void		use(ICharacter& target);
 };
+
 #endif

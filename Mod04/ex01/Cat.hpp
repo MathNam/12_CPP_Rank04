@@ -7,16 +7,16 @@
 class Cat : public Animal {
 public:
 	Cat();
-	Cat(const Cat &toCopy);
-	virtual ~Cat();
+	Cat(const Cat& toCopy);
+	~Cat();
 
-	Cat	&operator=(const Cat &rhs);
+	Cat&	operator=(const Cat& rhs);
 
-	virtual void	makeSound() const;
+	void	makeSound() const;
 	void	getIdeas() const;
 	void	setIdea(int index, std::string idea);
 
 private:
-	Brain	*_brain;
+	Brain*	_brain;
 };
 #endif

@@ -3,20 +3,16 @@
 
 #include "AMateria.hpp"
 
-class Cure : public AMateria
-{
+class Cure : public AMateria {
 public:
-
 	Cure();
-	Cure(const Cure &toCopy);
-	virtual ~Cure();
+	Cure(const Cure& toCopy);
+	~Cure();
 
-	Cure	&operator=(const Cure &rhs);
+	Cure&	operator=(const Cure& rhs);
 
-	virtual AMateria*	clone() const;
-	virtual void		use(ICharacter &target);
-
-protected:
-
+	AMateria*	clone() const;
+	void		use(ICharacter& target);
 };
+
 #endif

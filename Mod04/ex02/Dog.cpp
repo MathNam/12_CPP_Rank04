@@ -8,7 +8,7 @@ Dog::Dog(): AAnimal()
 	this->_brain = new Brain;
 }
 
-Dog::Dog(const Dog &toCopy): AAnimal()
+Dog::Dog(const Dog& toCopy): AAnimal()
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->_brain = new Brain;
@@ -21,7 +21,7 @@ Dog::~Dog()
 	delete this->_brain;
 }
 
-Dog	&Dog::operator=(const Dog &rhs)
+Dog&	Dog::operator=(const Dog& rhs)
 {
 	std::cout << "Dog assignation operator called" << std::endl;
 	if (this == &rhs)

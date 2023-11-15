@@ -3,10 +3,9 @@
 
 #include "ICharacter.hpp"
 
-class Character: public ICharacter
-{
+class Character: public ICharacter {
 public:
-
+	Character();
 	Character(std::string const &name);
 	Character(const Character &toCopy);
 	virtual ~Character();
@@ -18,11 +17,8 @@ public:
 	virtual void				unequip(int idx);
 	virtual void				use(int idx, ICharacter& target);
 
-
-protected:
-
+private:
 	std::string	_name;
-	AMateria	*_inventory[4];
-
+	AMateria*	_inventory[4];
 };
 #endif

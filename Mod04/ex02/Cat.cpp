@@ -8,7 +8,7 @@ Cat::Cat(): AAnimal()
 	this->_brain = new Brain;
 }
 
-Cat::Cat(const Cat &toCopy): AAnimal()
+Cat::Cat(const Cat& toCopy): AAnimal()
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	this->_brain = new Brain;
@@ -21,7 +21,7 @@ Cat::~Cat()
 	delete this->_brain;
 }
 
-Cat	&Cat::operator=(const Cat &rhs)
+Cat&	Cat::operator=(const Cat& rhs)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this == &rhs)
